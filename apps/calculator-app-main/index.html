@@ -6,7 +6,6 @@
     <!-- displays site properly based on user's device -->
 
     <link rel="stylesheet" href="./styles/calculator.css" />
-    <link rel="stylesheet" href="./styles/themes.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <title>Frontend Mentor | Calculator app</title>
   </head>
@@ -14,7 +13,23 @@
     <div class="container">
     <header>
       <h1>calc</h1>
-      <div class="theme-box"></div>
+      <div class="theme-box">
+        <span>Theme</span>
+        <div class="theme-switch">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <label>
+              <input type="radio" name="theme" id="themeOne">
+            </label>
+            <label>
+              <input type="radio" name="theme" id="themeTwo">
+            </label>
+            <label>
+              <input type="radio" name="theme" id="themeThree">
+            </label>
+        </div>
+      </div>
     </header>
     <div class="calculator">
       <div id="display">
@@ -47,5 +62,6 @@
     </div>
     <script type="module" src="./src/keysHandles.js"></script>
     <script type="module" src="./src/scripts.js"></script>
+    <script src="./src/themes.js"></script>
   </body>
 </html>

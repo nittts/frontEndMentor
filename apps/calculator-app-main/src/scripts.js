@@ -46,7 +46,7 @@ const handleEqualKeyPress = () => {
   handleUpdate(`${answer}`);
 };
 
-export { handleNumKeyPress, handleSymbolKeyPress, handleEqualKeyPress, handleCleanKeyPress, formula };
+export { handleNumKeyPress, handleSymbolKeyPress, handleEqualKeyPress, handleCleanKeyPress };
 
 /* ------------------------------------ - ----------------------------------- */
 

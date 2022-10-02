@@ -1,10 +1,4 @@
-import {
-  handleNumKeyPress,
-  handleSymbolKeyPress,
-  handleEqualKeyPress,
-  handleCleanKeyPress,
-  formula,
-} from "./scripts.js";
+import { handleNumKeyPress, handleSymbolKeyPress, handleEqualKeyPress, handleCleanKeyPress } from "./scripts.js";
 
 /* -------------------------------- DOM Keys -------------------------------- */
 

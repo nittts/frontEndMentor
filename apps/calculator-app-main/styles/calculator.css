@@ -1,7 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=League+Spartan:wght@700&display=swap");
 
+:root {
+  /* backgrounds */
+
+  --main-background: hsl(222, 26%, 31%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  /* keys */
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+
+  --key-2-background: hsl(6, 63%, 50%);
+  --key-2-shadow: hsl(6, 70%, 34%);
+
+  --key-3-background: hsl(30, 25%, 89%);
+  --key-3-shadow: hsl(28, 16%, 65%);
+
+  /* text */
+  --text-1: hsl(221, 14%, 31%);
+  --text-2: hsl(0, 0%, 100%);
+  --text-3: hsl(0, 0%, 100%);
+}
+
 * {
   transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 body {
@@ -17,11 +46,11 @@ body {
   height: 100vh;
   width: 100vw;
 
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--main-background);
 
   font-family: "League Spartan", sans-serif;
 
-  color: hsl(0, 0%, 100%);
+  color: var(--text-2);
 }
 
 .container {
@@ -44,6 +73,55 @@ header {
   height: 10%;
 }
 
+header .theme-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 25%;
+}
+
+.theme-box span {
+  margin-right: 10%;
+}
+
+.theme-box .theme-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.theme-box .theme-switch span {
+  text-align: center;
+}
+
+.theme-box label {
+  background-color: var(--keypad-background);
+}
+
+.theme-switch label:first-of-type {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.theme-switch label:last-of-type {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.theme-switch label input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+}
+
+.theme-switch label input[type="radio"]:checked {
+  background-color: var(--key-2-background);
+}
+
 .calculator {
   height: 90%;
   width: 100%;
@@ -53,7 +131,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--screen-background);
   height: 10%;
   padding: 2% 2%;
   border-radius: 10px;
@@ -69,19 +147,19 @@ header {
   margin-top: 3%;
   padding: 6%;
   border-radius: 10px;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--keypad-background);
 }
 
 .keypad-nums button,
 .keypad-btns button {
-  background-color: hsl(30, 25%, 89%);
+  background-color: var(--key-3-background);
   border-radius: 10px;
   border: none;
   font-size: 1.5rem;
   font-weight: 700;
-  color: hsl(221, 14%, 31%);
+  color: var(--text-1);
 
-  box-shadow: 0px 4px 1px 1px hsl(28, 16%, 65%);
+  box-shadow: 0px 4px 1px 1px var(--key-3-shadow);
 
   cursor: pointer;
 }
@@ -93,16 +171,16 @@ header {
 
 .keypad-nums button:active,
 .keypad-btns button:active {
-  background-color: hsl(28, 16%, 65%);
+  background-color: var(--key-3-shadow);
   box-shadow: none;
-  color: hsl(30, 25%, 89%);
+  color: var(--key-3-background);
 }
 
 #del,
 #reset {
-  background-color: hsl(225, 21%, 49%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: 0px 4px 1px 1px hsl(224, 28%, 35%);
+  background-color: var(--key-background);
+  color: var(--text-3);
+  box-shadow: 0px 4px 1px 1px var(--key-shadow);
 }
 
 #del:hover,
@@ -112,15 +190,14 @@ header {
 
 #del:active,
 #reset:active {
-  background-color: hsl(224, 28%, 35%);
+  background-color: var(--key-shadow);
   box-shadow: none;
-  color: hsl(30, 25%, 89%);
 }
 
 #equal {
-  background-color: hsl(6, 63%, 50%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: 0px 4px 1px 1px hsl(6, 70%, 34%);
+  background-color: var(--key-2-background);
+  color: var(--text-2);
+  box-shadow: 0px 4px 1px 1px var(--key-2-shadow);
 }
 
 #equal:hover {
@@ -128,9 +205,9 @@ header {
 }
 
 #equal:active {
-  background-color: hsl(6, 70%, 34%);
+  background-color: var(--key-2-shadow);
   box-shadow: none;
-  color: hsl(30, 25%, 89%);
+  color: var(--key-3-background);
 }
 
 .keypad-nums {
@@ -151,6 +228,6 @@ header {
 
 .keypad-btns button {
   text-align: center;
-  width: 45%;
+  width: 48%;
   height: 100%;
 }
