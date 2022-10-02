@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="./styles/calculator.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+    <header>
+      <h1>calc</h1>
+      <div class="theme-box"></div>
+    </header>
+    <div class="calculator">
+      <div id="display">
+        <span id="display-led">0</span>
+      </div>
+      <div class="keypad">
+        <div class="keypad-nums">
+          <button value="7" id="seven">7</button>
+          <button value="8" id="eight">8</button>
+          <button value="9" id="nine">9</button>
+          <button id="del">DEL</button>
+          <button value="4" id="four">4</button>
+          <button value="5" id="five">5</button>
+          <button value="6" id="six">6</button>
+          <button value="+" id="plus">+</button>
+          <button value="1" id="one">1</button>
+          <button value="2" id="two">2</button>
+          <button value="3" id="three">3</button>
+          <button value="-" id="minus">-</button>
+          <button value="." id="dot">.</button>
+          <button value="0" id="zero">0</button>
+          <button value="/" id="div">/</button>
+          <button value="*" id="times">x</button>
+        </div>
+        <div class="keypad-btns">
+          <button id="reset">RESET</button>
+          <button id="equal">=</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/keysHandles.js"></script>
+    <script type="module" src="./src/scripts.js"></script>
+  </body>
+</html>
